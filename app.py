@@ -11,6 +11,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")  # Securely load API key
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
+    image_url = None
+    
     if request.method == "POST":
         prompt = request.form["prompt"]
         try:
